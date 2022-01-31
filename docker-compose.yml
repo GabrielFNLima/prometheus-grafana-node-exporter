@@ -33,6 +33,7 @@ services:
     container_name: node_exporter
     command:
       - '--path.rootfs=/host'
+      - '--collector.diskstats="conntrack,diskstats,entropy,filefd,filesystem,loadavg,mdadm,meminfo,netdev,netstat,stat,textfile,time,vmstat,ipvs"'
     pid: host
     restart: unless-stopped
     volumes:
